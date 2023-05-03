@@ -9,14 +9,14 @@ import {Recipe} from "./model/recipe";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-  recipes$!:Observable<Recipe[]>;
+
   constructor(private recipeService:RecipeService) {
 
   }
 
 
   ngOnInit(): void {
-    this.recipes$=this.recipeService.listAllRecipes();
+
 
   }
   }

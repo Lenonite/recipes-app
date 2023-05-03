@@ -1,12 +1,20 @@
 <div class="container mt-5">
+  <div *ngIf="(recipeService.recipes$|async) as recipesdata">
 <div class="row">
-  <div class="col md-4" *ngFor="let recipe of recipes">
-    <div class="card" style="width: 18rem;">
+
+  <div class="col md-4" *ngFor="let recipe of recipesdata">
+    <div class="card mb-2" style="width: 18rem;">
       <img [src]="'assets/recipes/'+recipe.imageUrl" class="card-img-top" alt="">
       <div class="card-body">
-        <h5 class="card-title text-center"
+        <h5 class="card-title text-center">{{recipe.title}}</h5>
+        <p class="card-text text-muted text-center">{{recipe.title}}</p>
+        <p class="d-flex justify-content-between">
+          <span class="text-muted">{{recipe.prepTime}}min</span>
+          <span class="text-muted">{{recipe.cookTime}}min</span>
+        </p>
       </div>
     </div>
+  </div>
   </div>
 </div>
 </div>
